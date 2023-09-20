@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌟 Solana Web3 Template with Next.js + Nightly Connect 🌟
 
-## Getting Started
+Elevate your Solana blockchain development experience with this robust template powered by Next.js and integrated with [Nightly Connect](https://connect.nightly.app/docs/) for seamless wallet management. This template provides you with the core building blocks to jump-start your Solana project!
 
-First, run the development server:
+![Discord](https://img.shields.io/discord/7nhFHA6yZq?color=7389D8&logo=discord&logoColor=ffffff)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
+
+---
+
+## 🚀 Quick Start
+
+Getting up and running is as easy as 1-2-3!
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun run dev
+# Clone the repo
+git clone https://github.com/nightly-labs/solana-web3-template.git
+
+# Navigate to project directory
+cd solana-web3-template
+
+# Install dependencies
+npm/yarn/pnpm/bun install
+
+# Start development server
+npm/yarn/pnpm/bun install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now, open your browser and navigate to [http://localhost:3000](http://localhost:3000) to see your blazing fast Solana app in action!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎨 Features
 
-## Learn More
+- 🛠 **Next.js Framework**: Build your dApp using the versatile and powerful Next.js.
+- 🔐 **Nightly Connect Integration**: A built-in wallet selector to make transactions a breeze.
+- 📋 **Prebuilt Flows**: This template comes with prebuilt flows for wallet connection and sample requests.
+- 🤝 **Community Support**: Have questions? Join our [Discord community](https://discord.com/invite/7nhFHA6yZq).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🖖 Contribute
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Feel free to fork this repository and submit pull requests. To clone the repository and set up the development environment, you can follow the [Quick Start](#-quick-start) guide.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📬 Get in Touch
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have questions or just want to chat with developers, [join our Discord community](https://discord.com/invite/7nhFHA6yZq).
+
+---
+
+## 🎉 Have Fun and Happy Coding!
+
+Use this template to build something incredible! Enjoy coding!
