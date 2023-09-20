@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nightlylabs/wallet-selector-solana": "^0.2.1",
+    "@nightlylabs/wallet-selector-solana": "^0.2.2",
     "@react-spring/three": "9.1.1",
     "@react-spring/web": "9.1.1",
     "@react-three/drei": "4.1.8",
     "@react-three/fiber": "6.0.14",
+    "@solana/web3.js": "^1.78.5",
     "@types/node": "20.6.2",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
@@ -25,6 +26,7 @@
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sonner": "^1.0.2",
     "styled-components": "5.2.3",
     "tailwindcss": "3.3.3",
     "three": "0.127.0",
@@ -35,6 +37,7 @@
     "babel-plugin-macros": "^3.0.1"
   },
   "devDependencies": {
-    "@types/three": "^0.156.0"
+    "@types/three": "^0.156.0",
+    "encoding": "^0.1.13"
   }
 }

@@ -1,8 +1,8 @@
-'use client'
-import StickyHeader from './components/StickyHeader'
-import Background from './components/Background'
-import Torus from './components/Torus/App'
 import { Loader } from '@react-three/drei'
+import { Toaster } from 'sonner'
+import Background from './components/Background'
+import StickyHeader from './components/StickyHeader'
+import Torus from './components/Torus/App'
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <Background />
       <StickyHeader />
       <Torus />
+      <Toaster position='bottom-left' richColors />
       <Loader />
     </>
   )
