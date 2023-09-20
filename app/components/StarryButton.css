@@ -1,0 +1,22 @@
+.glow-effect {
+  box-shadow: 0 0 5px #333, 0 0 10px #333, 0 0 15px #555, 0 0 20px #555, 0 0 25px #555,
+    0 0 35px #666, 0 0 40px #666, 0 0 50px #666, 0 0 75px #666;
+}
+.stars-bg {
+  background-image: url('/stars.png');
+  background-size: cover;
+  background-position: 0 0;
+}
+
+@keyframes move-stars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 578px 578px;
+  }
+}
+
+.animate-move-stars {
+  animation: move-stars 10s linear infinite;
+}
