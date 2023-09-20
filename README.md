@@ -55,3 +55,9 @@ If you have questions or just want to chat with developers, [join our Discord co
 ## 🎉 Have Fun and Happy Coding!
 
 Use this template to build something incredible! Enjoy coding!
+
+## 🙏 Credits
+
+This project wouldn't be possible without the help and contributions of:
+
+- [router-transitions](https://codesandbox.io/s/router-transitions-7kohn) for awesome 3d animation.

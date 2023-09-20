@@ -1,7 +1,10 @@
 {
   "name": "solana-web3-template",
   "version": "0.1.0",
-  "private": true,
+  "description": "Template for Solana Web3 Apps",
+  "author": "Nightly Labs",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
