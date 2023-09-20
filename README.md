@@ -1,4 +1,4 @@
-# 🌟 Solana Web3 Template with Next.js + Nightly Connect 🌟
+# 🌟 Solana Web3 Template 🌟
 
 Elevate your Solana blockchain development experience with this robust template powered by Next.js and integrated with [Nightly Connect](https://connect.nightly.app/docs/) for seamless wallet management. This template provides you with the core building blocks to jump-start your Solana project!
 
