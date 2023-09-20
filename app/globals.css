@@ -47,11 +47,3 @@ body {
     ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
-a {
-  pointer-events: all;
-  cursor: pointer;
-  color: inherit;
-  text-decoration: none;
-  margin-left: 20px;
-}
