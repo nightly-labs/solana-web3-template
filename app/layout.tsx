@@ -5,8 +5,22 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Solana web3 template',
-  description: 'Solana web3 template',
+  title: 'Solana Template App',
+  description:
+    'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
+  twitter: {
+    title: 'Solana Template App',
+    description:
+      'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
+    images: 'https://solana-web3-template.nightly.app/preview.png',
+    card: 'summary_large_image',
+  },
+  openGraph: {
+    title: 'Solana Template App',
+    description:
+      'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
+    images: 'https://solana-web3-template.nightly.app/preview.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
