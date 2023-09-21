@@ -34,7 +34,8 @@ Now, open your browser and navigate to [http://localhost:3000](http://localhost:
 ## 🎨 Features
 
 - 🛠 **Next.js Framework**: Build your dApp using the versatile and powerful Next.js.
-- 🔐 **Nightly Connect Integration**: A built-in wallet selector to make transactions a breeze.
+- 🎨 **Tailwind**: A best-in-class CSS framework that turns styling into an art.
+- 🔐 **Nightly Connect Integration**: Seamless wallet selection integrated for easy transactions.
 - 📋 **Prebuilt Flows**: This template comes with prebuilt flows for wallet connection and sample requests.
 - 🤝 **Community Support**: Have questions? Join our [Discord community](https://discord.com/invite/7nhFHA6yZq).
 

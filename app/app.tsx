@@ -1,3 +1,4 @@
+'use client'
 import { Loader } from '@react-three/drei'
 import { Toaster } from 'sonner'
 import Background from './components/Background'
