@@ -33,7 +33,7 @@ const StarryButton: React.FC<StarryButtonProps> = ({
       className=' relative overflow-hidden bg-black text-white w-[180px] h-[50px] rounded-lg glow-effect hover:scale-110 transition-transform duration-250'
     >
       <span className='absolute inset-0 flex items-center justify-center z-10'>
-        {hovering ? 'Disconnect' : connected ? publicKey?.substring(0, 10) : 'Connect'}
+        {hovering && connected ? 'Disconnect' : connected ? publicKey?.substring(0, 10) : 'Connect'}
       </span>
       <div className='absolute inset-0 bg-black stars-bg animate-move-stars z-0'></div>
     </button>
