@@ -14,12 +14,15 @@ export const metadata: Metadata = {
       'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
     images: 'https://solana-web3-template.nightly.app/preview.png',
     card: 'summary_large_image',
+    site: 'https://solana-web3-template.nightly.app',
   },
   openGraph: {
     title: 'Solana Template App',
     description:
       'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
     images: 'https://solana-web3-template.nightly.app/preview.png',
+    url: 'https://solana-web3-template.nightly.app',
+    type: 'website',
   },
 }
 
