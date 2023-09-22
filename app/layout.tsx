@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     description:
       'Start your Solana journey here, without unnecessary configuration and setup. Just clone it and code on top of it. Powered by Nightly Wallet.',
     images: 'https://solana-web3-template.nightly.app/preview.png',
-    card: 'summary',
-    site: 'https://solana-web3-template.nightly.app',
+    card: 'summary_large_image',
+    site: '@nightly_app',
   },
   openGraph: {
     title: 'Solana Template App',
