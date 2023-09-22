@@ -20,6 +20,7 @@ const StickyHeader: React.FC = () => {
             setPublicKey(publicKey.toString())
           }
         } catch (error) {
+          await adapter.disconnect()
           console.log(error)
         }
       }
@@ -45,14 +46,15 @@ const StickyHeader: React.FC = () => {
           <StarryButton
             connected={publicKey !== undefined}
             onConnect={async () => {
+              const adapter = await getAdapter()
               try {
-                const adapter = await getAdapter()
                 await adapter.connect()
                 const publicKey = await adapter.publicKey
                 if (publicKey) {
                   setPublicKey(publicKey.toString())
                 }
               } catch (error) {
+                await adapter.disconnect()
                 console.log(error)
               }
             }}
