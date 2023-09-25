@@ -20,7 +20,7 @@ const StickyHeader: React.FC = () => {
             setPublicKey(publicKey.toString())
           }
         } catch (error) {
-          await adapter.disconnect()
+          await adapter.disconnect().then(() => {})
           console.log(error)
         }
       }
@@ -54,7 +54,7 @@ const StickyHeader: React.FC = () => {
                   setPublicKey(publicKey.toString())
                 }
               } catch (error) {
-                await adapter.disconnect()
+                await adapter.disconnect().then(() => {})
                 console.log(error)
               }
             }}
