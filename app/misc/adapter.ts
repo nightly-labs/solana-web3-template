@@ -1,17 +1,27 @@
-import { NightlyConnectAdapter } from '@nightlylabs/wallet-selector-solana'
+import { NightlyConnectAdapter } from "@nightlylabs/wallet-selector-solana";
 
-let _adapter: NightlyConnectAdapter | undefined
-export const getAdapter = async (persisted = true) => {
-  if (_adapter) return _adapter
+export interface ConnectionOptions {
+  disableModal?: boolean;
+  disableEagerConnect?: boolean;
+  initOnConnect?: boolean;
+}
+
+let _adapter: NightlyConnectAdapter | undefined;
+export const getAdapter = async (
+  persisted = true,
+  connectionOptions: ConnectionOptions = {}
+) => {
+  if (_adapter) return _adapter;
   _adapter = await NightlyConnectAdapter.build(
     {
       appMetadata: {
-        name: 'Solana Template',
-        description: 'Solana Template',
-        icon: 'https://docs.nightly.app/img/logo.png',
+        name: "Solana Template",
+        description: "Solana Template",
+        icon: "https://docs.nightly.app/img/logo.png",
       },
+      persistent: persisted,
     },
-    persisted
-  )
-  return _adapter
-}
+    connectionOptions
+  );
+  return _adapter;
+};
