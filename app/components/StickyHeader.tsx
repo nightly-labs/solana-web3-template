@@ -12,13 +12,20 @@ const StickyHeader: React.FC = () => {
   useEffect(() => {
     const init = async () => {
       const adapter = await getAdapter();
+
+      adapter.on("connect", (publicKey) => {
+        if (publicKey) {
+          setPublicKey(publicKey.toString());
+        }
+      });
+
+      adapter.on("disconnect", () => {
+        setPublicKey(undefined);
+      });
+
       if (await adapter.canEagerConnect()) {
         try {
           await adapter.connect();
-          const publicKey = await adapter.publicKey;
-          if (publicKey) {
-            setPublicKey(publicKey.toString());
-          }
         } catch (error) {
           await adapter.disconnect().then(() => {});
           console.log(error);
@@ -28,6 +35,7 @@ const StickyHeader: React.FC = () => {
     init();
     // Try eagerly connect
   }, []);
+
   return (
     <header className="fixed top-0 left-0 w-full bg-opacity-50  p-6 z-10">
       <div className="flex items-center justify-between">
@@ -49,10 +57,6 @@ const StickyHeader: React.FC = () => {
               const adapter = await getAdapter();
               try {
                 await adapter.connect();
-                const publicKey = await adapter.publicKey;
-                if (publicKey) {
-                  setPublicKey(publicKey.toString());
-                }
               } catch (error) {
                 await adapter.disconnect().then(() => {});
                 console.log(error);
@@ -61,8 +65,8 @@ const StickyHeader: React.FC = () => {
             onDisconnect={async () => {
               try {
                 const adapter = await getAdapter();
+
                 await adapter.disconnect();
-                setPublicKey(undefined);
               } catch (error) {
                 console.log(error);
               }
