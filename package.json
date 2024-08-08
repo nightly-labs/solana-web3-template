@@ -12,7 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nightlylabs/wallet-selector-solana": "^0.3.2",
+    "@nightlylabs/wallet-selector-solana": "0.3.4",
     "@react-spring/three": "9.1.1",
     "@react-spring/web": "9.1.1",
     "@react-three/drei": "4.1.8",
@@ -43,5 +43,6 @@
   "devDependencies": {
     "@types/three": "^0.156.0",
     "encoding": "^0.1.13"
-  }
+  },
+  "packageManager": "yarn@4.3.0+sha512.1606bef7c84bc7d83b8576063de2fd08f7d69f9939015bed800f9585a002390268ecc777e9feeba7e26e9556aef6beaad4806968db2182ab5dd3e955ab3b9a0b"
 }
