@@ -158,7 +158,7 @@ const StickyHeader: React.FC = () => {
                       success: (_) => {
                         return `Transactions sent!`;
                       },
-                      error: "Operation has been rejected!",
+                      error: "Transactions failed to send!",
                     });
                   };
                   toast.promise(signAllTransactions, {
