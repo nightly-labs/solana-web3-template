@@ -23,6 +23,10 @@ const StickyHeader: React.FC = () => {
         setPublicKey(undefined);
       });
 
+      adapter.on("change", (a) => {
+        if (!!a.accounts?.length) setPublicKey(a.accounts[0].address);
+      });
+
       if (await adapter.canEagerConnect()) {
         try {
           await adapter.connect();
@@ -78,7 +82,7 @@ const StickyHeader: React.FC = () => {
               <ActionStarryButton
                 onClick={async () => {
                   const signTransaction = async () => {
-                    const solana = await getSolana();
+                    const solana = getSolana();
                     const adapter = await getAdapter();
                     const ix = SystemProgram.transfer({
                       fromPubkey: new PublicKey(publicKey),
@@ -95,7 +99,7 @@ const StickyHeader: React.FC = () => {
                     const sig = await solana.sendRawTransaction(
                       signedTx.serialize()
                     );
-                    toast.success("Transaction send!", {
+                    toast.success("Transaction sent!", {
                       action: {
                         label: "Show Transaction",
                         onClick: () => {
@@ -117,6 +121,55 @@ const StickyHeader: React.FC = () => {
                   });
                 }}
                 name="Sign Transaction"
+              ></ActionStarryButton>
+              <ActionStarryButton
+                onClick={async () => {
+                  const signAllTransactions = async () => {
+                    const solana = getSolana();
+                    const adapter = await getAdapter();
+                    const ix = SystemProgram.transfer({
+                      fromPubkey: new PublicKey(publicKey),
+                      lamports: 1e6,
+                      toPubkey: new PublicKey(
+                        "C3XueH9USYvEioWKvn3TkApiAf2TjYd7Gpqi83h6cNXg"
+                      ),
+                    });
+                    const txs = [
+                      new Transaction().add(ix),
+                      new Transaction().add(ix).add(ix),
+                    ];
+
+                    const a = await solana.getLatestBlockhash();
+                    for (const tx of txs) {
+                      tx.recentBlockhash = a.blockhash;
+                      tx.feePayer = new PublicKey(publicKey);
+                    }
+
+                    const sendPromises: Promise<string>[] = [];
+                    const signedTxs = await adapter.signAllTransactions!(txs);
+                    for (const signedTx of signedTxs) {
+                      sendPromises.push(
+                        solana.sendRawTransaction(signedTx.serialize())
+                      );
+                    }
+
+                    toast.promise(Promise.all(sendPromises), {
+                      loading: "Sending Transactions...",
+                      success: (_) => {
+                        return `Transactions sent!`;
+                      },
+                      error: "Operation has been rejected!",
+                    });
+                  };
+                  toast.promise(signAllTransactions, {
+                    loading: "Signing Transactions...",
+                    success: (_) => {
+                      return `Transactions signed!`;
+                    },
+                    error: "Operation has been rejected!",
+                  });
+                }}
+                name="Sign All"
               ></ActionStarryButton>
               <ActionStarryButton
                 onClick={async () => {
