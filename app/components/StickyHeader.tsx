@@ -18,6 +18,7 @@ const StickyHeader: React.FC = () => {
       adapter.on("connect", (publicKey) => {
         if (publicKey) {
           setPublicKey(publicKey.toString());
+          setWalletName(adapter.selectedWallet?.name);
         }
       });
 
@@ -37,7 +38,6 @@ const StickyHeader: React.FC = () => {
           console.log(error);
         }
       }
-      setWalletName(adapter.selectedWallet?.name);
     };
     init();
     // Try eagerly connect
@@ -196,14 +196,14 @@ const StickyHeader: React.FC = () => {
               {walletName === "Nightly" ? (
                 <ChangeNetworkButton
                   onClick={async (
-                    genesisHash: string,
+                    genesisHash: string | undefined,
                     url: string | undefined
                   ) => {
                     //@ts-ignore
-                    await window?.nightly?.solana.changeNetwork(
+                    await window?.nightly?.solana?.changeNetwork({
                       genesisHash,
-                      url
-                    );
+                      url,
+                    });
                   }}
                 />
               ) : null}
