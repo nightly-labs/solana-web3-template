@@ -52,6 +52,11 @@ const CUSTOM_NETWORK: INetwork[] = [
     genesisHash: undefined,
     url: "https://solana-mainnet.rpc.extrnode.com/85c27167-63a1-4fa3-9971-fc1df7b132dc",
   },
+  {
+    name: "Solana Mainnet with url",
+    genesisHash: "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+    url: "https://solana-mainnet.rpc.extrnode.com/85c27167-63a1-4fa3-9971-fc1df7b132dc",
+  },
 ];
 
 const ChangeNetworkButton: React.FC<ChangeNetworkButtonProps> = ({
