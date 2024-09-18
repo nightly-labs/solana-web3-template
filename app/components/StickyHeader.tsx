@@ -6,9 +6,11 @@ import { getAdapter } from "../misc/adapter";
 import { getSolana } from "../misc/solana";
 import ActionStarryButton from "./ActionStarryButton";
 import StarryButton from "./StarryButton";
+import ChangeNetworkButton from "./ChangeNetworkButton";
 
 const StickyHeader: React.FC = () => {
   const [publicKey, setPublicKey] = React.useState<string | undefined>();
+  const [walletName, setWalletName] = React.useState<string | undefined>();
   useEffect(() => {
     const init = async () => {
       const adapter = await getAdapter();
@@ -16,6 +18,7 @@ const StickyHeader: React.FC = () => {
       adapter.on("connect", (publicKey) => {
         if (publicKey) {
           setPublicKey(publicKey.toString());
+          setWalletName(adapter.selectedWallet?.name);
         }
       });
 
@@ -189,6 +192,24 @@ const StickyHeader: React.FC = () => {
                 }}
                 name="Sign Message"
               ></ActionStarryButton>
+              {/* Custom function to change network */}
+              {walletName === "Nightly" ? (
+                <ChangeNetworkButton
+                  onClick={async (
+                    genesisHash: string | undefined,
+                    url: string | undefined
+                  ) => {
+                    //get actual genesisHash
+                    // window.nightly.solana.genesisHash
+
+                    //@ts-ignore
+                    await window?.nightly?.solana?.changeNetwork({
+                      genesisHash,
+                      url,
+                    });
+                  }}
+                />
+              ) : null}
             </>
           )}
         </div>
