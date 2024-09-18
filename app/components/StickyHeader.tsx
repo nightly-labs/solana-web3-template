@@ -199,6 +199,9 @@ const StickyHeader: React.FC = () => {
                     genesisHash: string | undefined,
                     url: string | undefined
                   ) => {
+                    //get actual genesisHash
+                    // window.nightly.solana.genesisHash
+
                     //@ts-ignore
                     await window?.nightly?.solana?.changeNetwork({
                       genesisHash,
