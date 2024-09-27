@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./StarryButton.css";
 export interface ChangeNetworkButtonProps {
-  onClick: (
-    genesisHash: string | undefined,
-    url: string | undefined
-  ) => Promise<void>;
+  onClick: (genesisHash: string, url: string | undefined) => Promise<void>;
 }
 export interface INetwork {
   name: string;
-  genesisHash: string | undefined;
+  genesisHash: string;
   url: string | undefined;
 }
 const CUSTOM_NETWORK: INetwork[] = [
@@ -46,11 +43,6 @@ const CUSTOM_NETWORK: INetwork[] = [
     name: "Sonic Testnet",
     genesisHash: "Ep5wb4kbMk8yHqV4jMXNqDiMWnNtnTh8jX6WY59Y8Qvj",
     url: undefined,
-  },
-  {
-    name: "Only url", // Passing only the Url sets Solana as the primary network
-    genesisHash: undefined,
-    url: "https://solana-mainnet.rpc.extrnode.com/85c27167-63a1-4fa3-9971-fc1df7b132dc",
   },
   {
     name: "Solana Mainnet with url",

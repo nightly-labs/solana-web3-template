@@ -196,17 +196,17 @@ const StickyHeader: React.FC = () => {
               {walletName === "Nightly" ? (
                 <ChangeNetworkButton
                   onClick={async (
-                    genesisHash: string | undefined,
+                    genesisHash: string,
                     url: string | undefined
                   ) => {
-                    //get actual genesisHash
-                    // window.nightly.solana.genesisHash
-
-                    //@ts-ignore
-                    await window?.nightly?.solana?.changeNetwork({
-                      genesisHash,
-                      url,
-                    });
+                    try {
+                      const adapter = await getAdapter();
+                      await adapter.changeNetwork({ genesisHash, url });
+                      toast.success("Network changed!");
+                    } catch (err) {
+                      console.log(err);
+                      toast.error("Changing network failed");
+                    }
                   }}
                 />
               ) : null}
