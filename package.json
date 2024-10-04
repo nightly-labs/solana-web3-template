@@ -12,7 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nightlylabs/wallet-selector-solana": "0.3.7",
+    "@nightlylabs/wallet-selector-solana": "0.3.8",
     "@react-spring/three": "9.1.1",
     "@react-spring/web": "9.1.1",
     "@react-three/drei": "4.1.8",
