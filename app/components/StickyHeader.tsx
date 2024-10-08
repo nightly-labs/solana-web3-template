@@ -7,6 +7,8 @@ import { getSolana } from "../misc/solana";
 import ActionStarryButton from "./ActionStarryButton";
 import StarryButton from "./StarryButton";
 import ChangeNetworkButton from "./ChangeNetworkButton";
+import nacl from "tweetnacl";
+import bs58 from "bs58";
 
 const StickyHeader: React.FC = () => {
   const [publicKey, setPublicKey] = React.useState<string | undefined>();
@@ -178,9 +180,20 @@ const StickyHeader: React.FC = () => {
                 onClick={async () => {
                   const signMessage = async () => {
                     const adapter = await getAdapter();
-                    await adapter.signMessage(
-                      new Uint8Array(Buffer.from("I love Nightly 🦊"))
+                    const msg = new Uint8Array(
+                      Buffer.from("I love Nightly 🦊")
                     );
+                    const signature = await adapter.signMessage(msg);
+
+                    // Verify the signature
+                    const signatureBuffer = signature;
+                    const publickeyBuffer = bs58.decode(publicKey);
+                    const isVerified = nacl.sign.detached.verify(
+                      msg,
+                      signatureBuffer,
+                      publickeyBuffer
+                    );
+                    // console.log(isVerified);
                   };
                   toast.promise(signMessage, {
                     loading: "Signing message...",
