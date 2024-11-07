@@ -40,8 +40,33 @@ const CUSTOM_NETWORK: INetwork[] = [
     url: undefined,
   },
   {
-    name: "Sonic Testnet",
+    name: "Sonic Testnet V0",
     genesisHash: "Ep5wb4kbMk8yHqV4jMXNqDiMWnNtnTh8jX6WY59Y8Qvj",
+    url: undefined,
+  },
+  {
+    name: "Sonic Testnet V1",
+    genesisHash: "E8nY8PG8PEdzANRsv91C2w28Dbw9w3AhLqRYfn5tNv2C",
+    url: undefined,
+  },
+  {
+    name: "Sonic Devnet",
+    genesisHash: "BsJstMXKW4DpjzHPsSCdEcAn4YtpNiLFRFa5M5L7UxFx",
+    url: undefined,
+  },
+  // {
+  //   name: "Mantis Mainnet",
+  //   genesisHash: "3dbfejPqbZ5rgBnNd6wPP45Y5EAniqd2B8PwpV7aduag",
+  //   url: undefined,
+  // },
+  {
+    name: "Mantis Testnet",
+    genesisHash: "HK9p9HKs63CxRQCHDuRdX7pEuxA4iXCLZvPLr8aywmAa",
+    url: undefined,
+  },
+  {
+    name: "Soon Devnet",
+    genesisHash: "4y1i28kttkRTjNcKM8i7xXsRK8xBK2ML9TGhn7Ratrws",
     url: undefined,
   },
   {
