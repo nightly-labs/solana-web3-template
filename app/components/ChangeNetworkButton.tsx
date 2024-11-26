@@ -132,7 +132,13 @@ const ChangeNetworkButton: React.FC<ChangeNetworkButtonProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute mt-1 w-[180px] bg-black border border-gray-700 rounded-lg shadow-lg z-20">
+          <div
+            className="absolute mt-1 w-[180px] bg-black border border-gray-700 rounded-lg shadow-lg z-20 sm:max-h-screen max-h-[200px] overflow-auto"
+            style={{
+              scrollbarWidth: "thin",
+              scrollbarColor: "gray transparent",
+            }}
+          >
             {CUSTOM_NETWORK.map((network) => (
               <div
                 key={network.name}

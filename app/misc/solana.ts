@@ -1,8 +1,10 @@
-import { Connection } from '@solana/web3.js'
+import { Connection } from "@solana/web3.js";
 
-let _solana: Connection | undefined
+let _solana: Connection | undefined;
 export const getSolana = () => {
-  if (_solana) return _solana
-  _solana = new Connection('https://rpc.helius.xyz/?api-key=8b0779ce-6e1e-4812-ac61-b17cb4ce1971')
-  return _solana
-}
+  if (_solana) return _solana;
+  _solana = new Connection(
+    "https://rpc.helius.xyz/?api-key=1aa1b801-10ea-47eb-80b7-ca3917b2bca7"
+  );
+  return _solana;
+};

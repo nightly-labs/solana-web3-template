@@ -122,7 +122,10 @@ const StickyHeader: React.FC = () => {
                     success: (_) => {
                       return `Transaction signed!`;
                     },
-                    error: "Operation has been rejected!",
+                    error: (error) => {
+                      console.log(error);
+                      return "Operation has been rejected!";
+                    },
                   });
                 }}
                 name="Sign Transaction"
