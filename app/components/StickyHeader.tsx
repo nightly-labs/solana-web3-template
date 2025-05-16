@@ -9,6 +9,8 @@ import StarryButton from "./StarryButton";
 import ChangeNetworkButton from "./ChangeNetworkButton";
 import nacl from "tweetnacl";
 import bs58 from "bs58";
+import type { SolanaSignInInput } from "@solana/wallet-standard-features";
+import { verifySignIn } from "@solana/wallet-standard-util";
 
 const StickyHeader: React.FC = () => {
   const [publicKey, setPublicKey] = React.useState<string | undefined>();
@@ -208,6 +210,41 @@ const StickyHeader: React.FC = () => {
                 }}
                 name="Sign Message"
               ></ActionStarryButton>
+
+              <ActionStarryButton
+                onClick={async () => {
+                  const signMessage = async () => {
+                    // const adapter = await getAdapter();
+                    //@ts-expect-error
+                    const adapter = window.nightly.solana;
+                    const msg = "I love Nightly 🦊";
+                    const signIn = adapter.features["solana:signIn"].signIn;
+                    if (!signIn) {
+                      throw new Error("signIn not supported");
+                    }
+                    const input: SolanaSignInInput = {
+                      domain: window.location.host,
+                      address: publicKey,
+                      statement: "Please sign in.",
+                    };
+
+                    const output = await signIn(input);
+                    const isVerified = verifySignIn(input, output[0]);
+                    if (!isVerified) {
+                      throw new Error("Sign In verification failed!");
+                    }
+                  };
+                  toast.promise(signMessage, {
+                    loading: "SignIn...",
+                    success: (_) => {
+                      return `SignIn Success!`;
+                    },
+                    error: "Operation has been rejected!",
+                  });
+                }}
+                name="SignIn"
+              ></ActionStarryButton>
+
               {/* Custom function to change network */}
               {walletName === "Nightly" ? (
                 <ChangeNetworkButton
